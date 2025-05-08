@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Attendance</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Employee Attendance</h2>
+  <form id="attendanceForm">
+    <label>Name:
+      <input type="text" id="name" required />
+    </label>
+
+    <label>Attendance:
+      <input type="radio" name="attendance" value="Clock In" required /> Clock In
+      <input type="radio" name="attendance" value="Clock Out" /> Clock Out
+    </label>
+
+    <label>Place:
+      <select id="place" required>
+        <option value="">-- Select Place --</option>
+        <option value="Office A">Office A</option>
+        <option value="Office B">Office B</option>
+        <option value="Office C">Office C</option>
+        <option value="Remote">Remote</option>
+        <option value="On-site">On-site</option>
+      </select>
+    </label>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="status"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>

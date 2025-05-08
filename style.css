@@ -1,0 +1,13 @@
+body {
+  font-family: Arial;
+  margin: 2em;
+}
+
+label, select {
+  display: block;
+  margin-top: 1em;
+}
+
+button {
+  margin-top: 1.5em;
+}

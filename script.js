@@ -1,24 +1,21 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwoqTgLGAhjCsG_ilEtwgxJ_VU6SpC5JhPH70PejfYEE9J388HQgZ1oOrxGZMaVm0vv/exec'; // Replace with your Apps Script Web App URL
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwoqTgLGAhjCsG_ilEtwgxJ_VU6SpC5JhPH70PejfYEE9J388HQgZ1oOrxGZMaVm0vv/exec';
 
 document.getElementById('attendanceForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const name = document.getElementById('name').value;
-  const attendance = document.querySelector('input[name="attendance"]:checked').value;
-  const place = document.getElementById('place').value;
+  const formData = new FormData(document.getElementById('attendanceForm'));
 
   fetch(scriptURL, {
     method: 'POST',
-    body: JSON.stringify({ name, attendance, place }),
-    headers: { 'Content-Type': 'application/json' }
+    body: formData
   })
-  .then(res => res.text())
+  .then(response => response.text())
   .then(data => {
     document.getElementById('status').innerText = "Submitted successfully!";
     document.getElementById('attendanceForm').reset();
   })
-  .catch(err => {
+  .catch(error => {
     document.getElementById('status').innerText = "Error submitting data.";
-    console.error(err);
+    console.error('Error!', error.message);
   });
 });

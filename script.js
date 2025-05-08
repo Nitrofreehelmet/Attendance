@@ -1,4 +1,4 @@
-const scriptURL = 'YOUR_WEB_APP_URL'; // Replace with your Apps Script Web App URL
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwoqTgLGAhjCsG_ilEtwgxJ_VU6SpC5JhPH70PejfYEE9J388HQgZ1oOrxGZMaVm0vv/exec'; // Replace with your Apps Script Web App URL
 
 document.getElementById('attendanceForm').addEventListener('submit', function(e) {
   e.preventDefault();
